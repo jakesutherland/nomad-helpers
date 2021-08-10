@@ -155,3 +155,26 @@ if ( ! function_exists( __NAMESPACE__ . '\\nomad_format_attributes' ) ) {
 	}
 
 }
+
+if ( ! function_exists( __NAMESPACE__ . '\\nomad_array_keys_exist' ) ) {
+
+	/**
+	 * Nomad Array Keys Exist.
+	 *
+	 * Checks that all keys exist in the haystack.
+	 *
+	 * @since 1.1.0
+	 *
+	 * @param array $keys     Keys to check if they exist.
+	 * @param array $haystack Haystack to check against.
+	 *
+	 * @return boolean
+	 */
+	function nomad_array_keys_exist( array $keys, array $haystack ) {
+
+		return ( array_intersect( $keys, array_keys( $haystack ) ) === $keys ) ? true : false;
+
+	}
+
+}
+
