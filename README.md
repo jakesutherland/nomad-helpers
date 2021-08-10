@@ -44,6 +44,16 @@ define( 'NOMAD_ENV', 'production' );
 
 It is highly recommended that you never have a live production website set to `development`.
 
+### Nomad Errors
+
+While working on your project in a development environment, you may come across a Nomad Error. The purpose for Nomad Errors is to help steer you in the right direction when developing with Nomad features and utilities.
+
+Nomad Errors will stop all processing and display error messages when `NOMAD_ENV` is set to `development`.
+
+If `NOMAD_ENV` is set to `staging` or `production` then Nomad Errors will not be displayed.
+
+IMPORTANT: If `NOMAD_ENV` is NOT defined and is NOT set to `development` you will not see any Nomad Error messages! The assumption is that, by default, you're on a production environment.
+
 
 ## License
 
