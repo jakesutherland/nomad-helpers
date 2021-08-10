@@ -23,6 +23,10 @@ if ( ! defined( 'NOMAD_HELPERS_VERSION' ) ) {
 if ( ! defined( 'NOMAD_HELPERS_PATH' ) ) {
 	define( 'NOMAD_HELPERS_PATH', dirname( __FILE__ ) . '/' );
 }
+
+// Nomad Helpers Source Path.
+if ( ! defined( 'NOMAD_HELPERS_SRC_PATH' ) ) {
+	define( 'NOMAD_HELPERS_SRC_PATH', NOMAD_HELPERS_PATH . 'src/' );
 }
 
 // Nomad Environment.
