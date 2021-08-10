@@ -62,6 +62,12 @@ If `NOMAD_ENV` is set to `staging` or `production` then Nomad Errors will not be
 
 IMPORTANT: If `NOMAD_ENV` is NOT defined and is NOT set to `development` you will not see any Nomad Error messages! The assumption is that, by default, you're on a production environment.
 
+### Nomad Exceptions
+
+Much different than Nomad Errors, Nomad Exceptions happen when the code cannot recover from itself and the application needs to stop processing. Something is broken.
+
+Nomad Exceptions will be displayed regardless of your `NOMAD_ENV` setting.
+
 
 ## License
 
