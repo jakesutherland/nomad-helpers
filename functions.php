@@ -39,6 +39,11 @@ if ( ! defined( 'NOMAD_DEBUG' ) ) {
 	define( 'NOMAD_DEBUG', false );
 }
 
+// Include the Nomad Exception class.
+if ( ! class_exists( __NAMESPACE__ . '\\Nomad_Exception' ) ) {
+	require_once NOMAD_HELPERS_SRC_PATH . 'nomad-exception.php';
+}
+
 if ( ! function_exists( __NAMESPACE__ . '\\nomad_error' ) ) {
 
 	/**
