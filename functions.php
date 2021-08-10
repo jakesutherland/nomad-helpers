@@ -37,6 +37,18 @@ if ( ! function_exists( __NAMESPACE__ . '\\nomad_error' ) ) {
 	 *
 	 * Displays Nomad Error messages.
 	 *
+	 * The purpose for Nomad Errors is to help steer you in the right direction
+	 * when developing with Nomad features and utilities.
+	 *
+	 * Nomad Errors will stop all processing and display error messages when
+	 * `NOMAD_ENV` is set to `development`. If `NOMAD_ENV` is set to `staging`
+	 * or `production` then Nomad Errors will not be displayed.
+	 *
+	 * IMPORTANT: IF `NOMAD_ENV` IS NOT DEFINED AND IS NOT SET TO `development`
+	 * YOU WILL NOT SEE ANY NOMAD ERROR MESSAGES!
+	 *
+	 * @since 1.0.0
+	 *
 	 * @param string $message Message to be displayed.
 	 *
 	 * @return void
@@ -87,7 +99,7 @@ if ( ! function_exists( __NAMESPACE__ . '\\nomad_format_attributes' ) ) {
 	/**
 	 * Nomad Format Attributes.
 	 *
-	 * Provde an array of HTML attribute keys and their associated values and
+	 * Provide an array of HTML attribute keys and their associated values and
 	 * convert it into a string.
 	 *
 	 * @since 1.0.0
