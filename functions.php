@@ -34,6 +34,11 @@ if ( ! defined( 'NOMAD_ENV' ) ) {
 	define( 'NOMAD_ENV', 'production' ); // Possible values: 'production' | 'staging' | 'development'. Default: 'production'.
 }
 
+// Nomad Debugging.
+if ( ! defined( 'NOMAD_DEBUG' ) ) {
+	define( 'NOMAD_DEBUG', false );
+}
+
 if ( ! function_exists( __NAMESPACE__ . '\\nomad_error' ) ) {
 
 	/**
