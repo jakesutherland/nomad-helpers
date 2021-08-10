@@ -44,6 +44,14 @@ define( 'NOMAD_ENV', 'production' );
 
 It is highly recommended that you never have a live production website set to `development`.
 
+### Nomad Debugging
+
+The `NOMAD_DEBUG` constant is used to show additional debugging information when in a `development` environment. This should also be defined in your `wp-config.php` file.
+
+```
+define( 'NOMAD_DEBUG', true );
+```
+
 ### Nomad Errors
 
 While working on your project in a development environment, you may come across a Nomad Error. The purpose for Nomad Errors is to help steer you in the right direction when developing with Nomad features and utilities.
