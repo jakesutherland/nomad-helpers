@@ -178,3 +178,24 @@ if ( ! function_exists( __NAMESPACE__ . '\\nomad_array_keys_exist' ) ) {
 
 }
 
+if ( ! function_exists( __NAMESPACE__ . '\\nomad_array_keys_missing' ) ) {
+
+	/**
+	 * Nomad Array Keys Missing.
+	 *
+	 * Returns list of keys that are missing from the haystack.
+	 *
+	 * @since 1.1.0
+	 *
+	 * @param array $keys     Array of keys to compare from.
+	 * @param array $haystack Haystack to compare against.
+	 *
+	 * @return array
+	 */
+	function nomad_array_keys_missing( array $keys, array $haystack ) {
+
+		return array_diff( $haystack, array_keys( $keys ) );
+
+	}
+
+}
