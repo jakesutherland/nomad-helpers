@@ -14,14 +14,15 @@ namespace Nomad\Helpers;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Prevent direct access.
 
-// Nomad Helper Version.
-if ( ! defined( 'NOMAD_HELPER_VERSION' ) ) {
-	define( 'NOMAD_HELPER_VERSION', '1.0.0' );
+// Nomad Helpers Version.
+if ( ! defined( 'NOMAD_HELPERS_VERSION' ) ) {
+	define( 'NOMAD_HELPERS_VERSION', '1.0.0' );
 }
 
-// Nomad Helper Path.
-if ( ! defined( 'NOMAD_HELPER_PATH' ) ) {
-	define( 'NOMAD_HELPER_PATH', dirname( __FILE__ ) . '/' );
+// Nomad Helpers Path.
+if ( ! defined( 'NOMAD_HELPERS_PATH' ) ) {
+	define( 'NOMAD_HELPERS_PATH', dirname( __FILE__ ) . '/' );
+}
 }
 
 // Nomad Environment.
