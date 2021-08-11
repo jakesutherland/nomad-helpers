@@ -68,6 +68,27 @@ Much different than Nomad Errors, Nomad Exceptions happen when the code cannot r
 
 Nomad Exceptions will be displayed regardless of your `NOMAD_ENV` setting.
 
+## Changelog
+
+v1.1.0
+-
+* Updated constants (package is called Nomad Helpers, not Nomad Helper).
+* Updated constants commenting to include context and version number it was added.
+* Updated `nomad_error()` function comments to provide more context of expectations.
+* Added `NOMAD_ENV` documentation to `README.md`.
+* Added `NOMAD_HELPERS_SRC_PATH` constant.
+* Added `NOMAD_DEBUG` constant (default `false`).
+* Added `NOMAD_DEBUG` documentation to `README.md`.
+* Added `Nomad_Exception` class.
+* Added `Nomad_Exception` documentation to `README.md`.
+* Added `nomad_error()` documentation to `README.md`.
+* Added `nomad_array_keys_exist()` function.
+* Added `nomad_array_keys_missing()` function.
+* Added Changelog to `README.md`.
+
+v1.0.0
+-
+* Initial Release
 
 ## License
 
