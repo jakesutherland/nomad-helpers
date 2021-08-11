@@ -14,27 +14,63 @@ namespace Nomad\Helpers;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Prevent direct access.
 
-// Nomad Helpers Version.
+/**
+ * Nomad Helpers Version.
+ *
+ * @since 1.0.0
+ */
 if ( ! defined( 'NOMAD_HELPERS_VERSION' ) ) {
 	define( 'NOMAD_HELPERS_VERSION', '1.0.0' );
 }
 
-// Nomad Helpers Path.
+/**
+ * Nomad Helpers Path.
+ *
+ * @since 1.0.0
+ */
 if ( ! defined( 'NOMAD_HELPERS_PATH' ) ) {
 	define( 'NOMAD_HELPERS_PATH', dirname( __FILE__ ) . '/' );
 }
 
-// Nomad Helpers Source Path.
+/**
+ * Nomad Helpers Source Path.
+ *
+ * @since 1.1.0
+ */
 if ( ! defined( 'NOMAD_HELPERS_SRC_PATH' ) ) {
 	define( 'NOMAD_HELPERS_SRC_PATH', NOMAD_HELPERS_PATH . 'src/' );
 }
 
-// Nomad Environment.
+/**
+ * Nomad Environment.
+ *
+ * Determine the type of environment that your WordPress installation is
+ * running on.
+ *
+ * This should be defined in your `wp-config.php` file.
+ *
+ * Possible values: `production` `staging` `development`.
+ * Default value: `production`.
+ *
+ * @since 1.1.0
+ */
 if ( ! defined( 'NOMAD_ENV' ) ) {
-	define( 'NOMAD_ENV', 'production' ); // Possible values: 'production' | 'staging' | 'development'. Default: 'production'.
+	define( 'NOMAD_ENV', 'production' );
 }
 
-// Nomad Debugging.
+/**
+ * Nomad Debugging.
+ *
+ * Used to show additional debugging information when in a `development`
+ * environment.
+ *
+ * This should be defined in your `wp-config.php` file.
+ *
+ * Possible values: `true` `false`.
+ * Default value: `false`.
+ *
+ * @since 1.1.0
+ */
 if ( ! defined( 'NOMAD_DEBUG' ) ) {
 	define( 'NOMAD_DEBUG', false );
 }
