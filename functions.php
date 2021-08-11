@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Prevent direct access.
  * @since 1.0.0
  */
 if ( ! defined( 'NOMAD_HELPERS_VERSION' ) ) {
-	define( 'NOMAD_HELPERS_VERSION', '1.0.0' );
+	define( 'NOMAD_HELPERS_VERSION', '1.1.0' );
 }
 
 /**
