@@ -70,8 +70,7 @@ Nomad Exceptions will be displayed regardless of your `NOMAD_ENV` setting.
 
 ## Changelog
 
-v1.1.0
--
+### 1.1.0
 * Updated constants (package is called Nomad Helpers, not Nomad Helper).
 * Updated constants commenting to include context and version number it was added.
 * Updated `nomad_error()` function comments to provide more context of expectations.
@@ -86,8 +85,7 @@ v1.1.0
 * Added `nomad_array_keys_missing()` function.
 * Added Changelog to `README.md`.
 
-v1.0.0
--
+### 1.0.0
 * Initial Release
 
 ## License
