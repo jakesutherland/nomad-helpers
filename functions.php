@@ -178,9 +178,12 @@ if ( ! function_exists( __NAMESPACE__ . '\\nomad_format_attributes' ) ) {
 				continue;
 			}
 
-			if ( is_bool( $value ) && $value ) {
-				// If the value is a strict boolean and set to true, just output the key (e.g. required, checked).
-				$formatted_attributes .= ' ' . $key;
+			if ( is_bool( $value ) ) {
+				if ( $value ) {
+					// If the value is a strict boolean and set to true, just output the key (e.g. required, checked).
+					// If the value is false, we don't want to do anything, ignore it.
+					$formatted_attributes .= ' ' . $key;
+				}
 			} else if ( is_array( $value ) && ! empty( $value ) ) {
 				// If the value is an array, join them together as a string separated by a space and escape the value.
 				$formatted_attributes .= sprintf( ' %s="%s"', $key, esc_attr( implode( ' ', $value ) ) );
