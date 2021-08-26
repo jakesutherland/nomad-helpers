@@ -75,6 +75,11 @@ if ( ! defined( 'NOMAD_DEBUG' ) ) {
 	define( 'NOMAD_DEBUG', false );
 }
 
+// Include the Nomad Constants class.
+if ( ! class_exists( __NAMESPACE__ . '\\Nomad_Constants' ) ) {
+	require_once NOMAD_HELPERS_SRC_PATH . 'class-nomad-constants.php';
+}
+
 // Include the Nomad Exception class.
 if ( ! class_exists( __NAMESPACE__ . '\\Nomad_Exception' ) ) {
 	require_once NOMAD_HELPERS_SRC_PATH . 'nomad-exception.php';
