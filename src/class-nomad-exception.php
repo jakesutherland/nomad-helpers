@@ -13,6 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Prevent direct access.
 
 if ( ! class_exists( __NAMESPACE__ . '\\Nomad_Exception' ) ) {
 
+	/**
+	 * Nomad Exception Class.
+	 *
+	 * @since 1.1.0
+	 */
 	class Nomad_Exception extends \Exception {
 
 		public function __construct( $message, $code = 0, \Throwable $previous = null ) {
