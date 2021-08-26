@@ -235,3 +235,48 @@ if ( ! function_exists( __NAMESPACE__ . '\\nomad_array_keys_missing' ) ) {
 	}
 
 }
+
+if ( ! function_exists( __NAMESPACE__ . '\\register_nomad_package' ) ) {
+
+	/**
+	 * Register Nomad Package.
+	 *
+	 * Registers a Nomad Package in the global scope so we know which Nomad
+	 * Packages are being used.
+	 *
+	 * @since 1.2.0
+	 *
+	 * @param string $package The Nomad Package slug to register.
+	 * @param string $path    The path of the Nomad Package to register.
+	 */
+	function register_nomad_package( $package, $path ) {
+
+		$GLOBALS['_nomad']['packages'][ $package ] = str_replace( ABSPATH, '', $path );
+
+	}
+
+	// Register the Nomad Helpers package.
+	register_nomad_package( 'nomad-helpers', NOMAD_HELPERS_PATH );
+
+}
+
+if ( ! function_exists( __NAMESPACE__ . '\\register_nomad_plugin' ) ) {
+
+	/**
+	 * Register Nomad Plugin.
+	 *
+	 * Registers a Nomad Plugin in the global scope so we know which Nomad
+	 * Plugins are being used.
+	 *
+	 * @since 1.2.0
+	 *
+	 * @param string $plugin The Nomad Plugin slug to register.
+	 * @param string $path   The path of the Nomad Plugin to register.
+	 */
+	function register_nomad_plugin( $plugin, $path ) {
+
+		$GLOBALS['_nomad']['plugins'][ $plugin ] = str_replace( ABSPATH, '', $path );
+
+	}
+
+}
