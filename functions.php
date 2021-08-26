@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Prevent direct access.
  * @since 1.0.0
  */
 if ( ! defined( 'NOMAD_HELPERS_VERSION' ) ) {
-	define( 'NOMAD_HELPERS_VERSION', '1.1.0' );
+	define( 'NOMAD_HELPERS_VERSION', '1.2.0' );
 }
 
 /**
@@ -75,9 +75,14 @@ if ( ! defined( 'NOMAD_DEBUG' ) ) {
 	define( 'NOMAD_DEBUG', false );
 }
 
+// Include the Nomad Constants class.
+if ( ! class_exists( __NAMESPACE__ . '\\Nomad_Constants' ) ) {
+	require_once NOMAD_HELPERS_SRC_PATH . 'class-nomad-constants.php';
+}
+
 // Include the Nomad Exception class.
 if ( ! class_exists( __NAMESPACE__ . '\\Nomad_Exception' ) ) {
-	require_once NOMAD_HELPERS_SRC_PATH . 'nomad-exception.php';
+	require_once NOMAD_HELPERS_SRC_PATH . 'class-nomad-exception.php';
 }
 
 if ( ! function_exists( __NAMESPACE__ . '\\nomad_error' ) ) {
@@ -173,9 +178,12 @@ if ( ! function_exists( __NAMESPACE__ . '\\nomad_format_attributes' ) ) {
 				continue;
 			}
 
-			if ( is_bool( $value ) && $value ) {
-				// If the value is a strict boolean and set to true, just output the key (e.g. required, checked).
-				$formatted_attributes .= ' ' . $key;
+			if ( is_bool( $value ) ) {
+				if ( $value ) {
+					// If the value is a strict boolean and set to true, just output the key (e.g. required, checked).
+					// If the value is false, we don't want to do anything, ignore it.
+					$formatted_attributes .= ' ' . $key;
+				}
 			} else if ( is_array( $value ) && ! empty( $value ) ) {
 				// If the value is an array, join them together as a string separated by a space and escape the value.
 				$formatted_attributes .= sprintf( ' %s="%s"', $key, esc_attr( implode( ' ', $value ) ) );
@@ -231,6 +239,51 @@ if ( ! function_exists( __NAMESPACE__ . '\\nomad_array_keys_missing' ) ) {
 	function nomad_array_keys_missing( array $keys, array $haystack ) {
 
 		return array_diff( $haystack, array_keys( $keys ) );
+
+	}
+
+}
+
+if ( ! function_exists( __NAMESPACE__ . '\\register_nomad_package' ) ) {
+
+	/**
+	 * Register Nomad Package.
+	 *
+	 * Registers a Nomad Package in the global scope so we know which Nomad
+	 * Packages are being used.
+	 *
+	 * @since 1.2.0
+	 *
+	 * @param string $package The Nomad Package slug to register.
+	 * @param string $path    The path of the Nomad Package to register.
+	 */
+	function register_nomad_package( $package, $path ) {
+
+		$GLOBALS['_nomad']['packages'][ $package ] = str_replace( ABSPATH, '', $path );
+
+	}
+
+	// Register the Nomad Helpers package.
+	register_nomad_package( 'nomad-helpers', NOMAD_HELPERS_PATH );
+
+}
+
+if ( ! function_exists( __NAMESPACE__ . '\\register_nomad_plugin' ) ) {
+
+	/**
+	 * Register Nomad Plugin.
+	 *
+	 * Registers a Nomad Plugin in the global scope so we know which Nomad
+	 * Plugins are being used.
+	 *
+	 * @since 1.2.0
+	 *
+	 * @param string $plugin The Nomad Plugin slug to register.
+	 * @param string $path   The path of the Nomad Plugin to register.
+	 */
+	function register_nomad_plugin( $plugin, $path ) {
+
+		$GLOBALS['_nomad']['plugins'][ $plugin ] = str_replace( ABSPATH, '', $path );
 
 	}
 

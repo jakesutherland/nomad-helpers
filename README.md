@@ -68,10 +68,23 @@ Much different than Nomad Errors, Nomad Exceptions happen when the code cannot r
 
 Nomad Exceptions will be displayed regardless of your `NOMAD_ENV` setting.
 
+### Register Nomad Package & Plugin
+
+The `register_nomad_package()` and `register_nomad_plugin()` functions register a Nomad Package or Plugin in the global scope. This way the system knows which Nomad Packages or Plugins are available and being used. It passes in the path that its installed to help determine where the specific package is being loaded. This is important because every Nomad Plugin likely utilizes multiple Nomad Packages as dependencies, and each Nomad Package may also have its own dependencies.
+
+Every Nomad Package is developed in such a way that it will only load once, no matter how many instances may be installed across other various Nomad Plugins or Packages.
+
 ## Changelog
 
-v1.1.0
--
+### 1.2.0
+* Added `register_nomad_package()` and `register_nomad_plugin()` functions.
+* Added `Nomad_Constants` class that contains various constants.
+* Updated `Nomad_Exception` class filename to be prefixed with `class-`.
+* Updated changelog version number formatting.
+* Fixed `nomad_format_attributes()` when an attribute is a boolean and its value is false, the key should not be added to the list of attributes.
+* Removed `type` property from `composer.json` file.
+
+### 1.1.0
 * Updated constants (package is called Nomad Helpers, not Nomad Helper).
 * Updated constants commenting to include context and version number it was added.
 * Updated `nomad_error()` function comments to provide more context of expectations.
@@ -86,8 +99,7 @@ v1.1.0
 * Added `nomad_array_keys_missing()` function.
 * Added Changelog to `README.md`.
 
-v1.0.0
--
+### 1.0.0
 * Initial Release
 
 ## License
